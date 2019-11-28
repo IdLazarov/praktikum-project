@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Watashi no Anime</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand text-danger" href="index.html">Watashi no Anime</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto float-right">
+
+                <li class="nav-item dropdown">
+
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="anime.html">Anime</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="#">Manga</a>
+                </li>
+                </li>
+
+
+            </ul>
+            <form class="form-inline my-2 my-sm-0">
+                <input class="form-control mr-sm-2" id="findMangaByName" type="search" placeholder="Search"
+                    aria-label="Search">
+                <button class="btn btn-danger my-2 my-sm-0" id = "chosen-manga" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="row ml-2 justify-content-end">
+
+        <div class="d-inline-flex p-2">
+            <div class="dropdown mr-2">
+                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Year
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">pre-2000</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">post-2000</a>
+                </div>
+            </div>
+        </div>
+        <div class="d-inline-flex p-2">
+            <div class="dropdown mr-2">
+                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Author
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-2">
+            <div class="d-inline-flex p-2">
+                <div class="card bg-danger font-weight-bold d-flex justify-content-center" style="width: 18rem;">
+                    <img src="../preview_26644_1541328778.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="row">
+                            <label class="checkbox"><input type="checkbox" value="1"> Action </label>
+                            <label class="checkbox"><input type="checkbox" value="7"> Mystery </label>
+                            <label class="checkbox"><input type="checkbox" value="4"> Comedy </label>
+                        </div>
+                        <div class="row">
+                            <label class="checkbox"><input type="checkbox" value="8"> Drama </label>
+                            <label class="checkbox"><input type="checkbox" value="10"> Fantasy </label>
+
+                            <label class="checkbox"><input type="checkbox" value="22"> Romance </label>
+
+                        </div>
+                        <div class="row">
+                            <label class="checkbox"><input type="checkbox" value="16"> Magic </label>
+                            <label class="checkbox"><input type="checkbox" value="24"> Sci-Fi </label>
+                            <label class="checkbox"><input type="checkbox" value="14"> Horror </label>
+                        </div>
+                        <div class="row">
+                            <label class="checkbox"><input type="checkbox" value="2"> Adventure </label>
+                            <label class="checkbox"><input type="checkbox" value="40"> Psychological </label>
+                        </div>
+                        <div class="row">
+                            <label class="checkbox"><input type="checkbox" value="37"> Supernatural </label>
+                            <label class="checkbox"><input type="checkbox" value="36"> Slice of Life </label>
+                        </div>
+
+                    </div>
+                    <div class="card-footer d-flex justify-content-center">
+                        <h5>Choose your anime genre</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-10">
+            
+
+            <div class="container-fluid">
+
+                <div class="row mt-3">
+                    <div class="col">
+                        <ul id="render-mangas-list">
+
+
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="d-none" id="manga-template">
+        <li class="manga-list">
+            <div class="media" id="mangaMedia">
+                <img src="" class="mr-3 manga-image">
+                <div class="media-body">
+                    <h5 class="manga-title mt-0"></h5>
+                    <p class="about-manga-info"></p>
+                </div>
+            </div>
+        </li>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/mangaScripts.js"></script>
+    <script src="js/mangaByName.js"></script>
+
+</body>
+
+</html>

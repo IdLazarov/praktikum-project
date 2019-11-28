@@ -1,0 +1,67 @@
+html,body{
+ 
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    background-image: url(../css/f16edcb49c56db043bef00f778ad4496.jpg);
+    background-repeat: no-repeat;
+    padding: 10px;
+    background-size: cover;
+  
+}
+@media(max-width:600px){
+    body{
+        background-position: 50%,50%;
+    }
+}
+
+
+.container-fluid{
+    background-color: crimson;
+    border-radius: 25px;
+    height: 500px;
+    overflow:auto;
+    display: none;
+}
+.container{
+    background-color: crimson;
+    border-radius: 25px;
+    height: 500px;
+    overflow:auto;
+    
+}
+
+
+#Anime{
+    padding: 10px;
+    color:#000000;
+}
+
+#Manga{
+    padding: 10px;
+}
+
+#mangaMedia,#animeMedia,#cardFromList{
+    border:solid;
+}
+
+#card-anime-heading{
+    font-weight: bold;
+}
+
+#anime-card-template{
+    
+    justify-content: center;
+}
+
+
+.anime-image,.manga-image{
+    width: 160px;
+    height: 200px;
+    
+}
+
+ul{
+    list-style-type: none;
+}
+
